@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 const MenuWrapper = styled.div`
@@ -28,14 +29,16 @@ const MenuWrapper = styled.div`
         justify-content: center;
         transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         :active{
-            transform: rotate(90deg);
+            transform: ${props=>props.menu_open?'rotate(90deg)':'rotate(-90deg)'};
         }
         img{
             cursor: pointer;
             width: 70%;
         }
     }
-    .menu_item{
+    a{
+      width: 100%;
+      .menu_item{
         margin: 5px 0;
         width: 100%;
         border-radius: 20px;
@@ -46,6 +49,7 @@ const MenuWrapper = styled.div`
             cursor: pointer;
             width: 70%;
         }
+      }
     }
 `
 
@@ -62,12 +66,12 @@ export default class Menu extends Component {
   render() {
     return (
       <MenuWrapper menu_open={this.state.menu_open}>
-          <div className='menu_item'>
+          <Link to='/'><div className='menu_item'>
             <img alt='home' src={require('./../static/home.svg')} />
-          </div>
-          <div className='menu_item'>
+          </div></Link>
+          <Link to='/post'><div className='menu_item'>
             <img alt='add_blog' src={require('./../static/add_blog.svg')} />
-          </div>
+          </div></Link>
           <div className='menu_button' onClick={this.toggle_menu}>
             {this.state.menu_open?
             <img alt='menu_open' src={require('./../static/menu_close.svg')} />:

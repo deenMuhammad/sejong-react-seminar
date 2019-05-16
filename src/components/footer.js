@@ -17,7 +17,7 @@ const FooterWrapper = styled.div`
         justify-content: center; 
         img{
             width: 20px;
-            margin-right: 10px;
+            margin: 0 5px;
         }
     }
 `
@@ -33,7 +33,7 @@ export default class Footer extends Component {
             <a href="https://www.instagram.com/deen.mukhammad/" target="_blank" rel="noopener noreferrer"><img alt='instagram' src={require('./../static/logos/instagram.svg')}/></a>
             <a href="https://www.linkedin.com/in/deenmuhkhammad/" target="_blank" rel="noopener noreferrer"><img alt='linkedin' src={require('./../static/logos/linkedin.svg')}/></a>
             <a href="https://github.com/deenMuhammad" target="_blank" rel="noopener noreferrer"><img alt='github' src={require('./../static/logos/github.svg')} style={{margin: '0'}}/></a>
-            <a href="https://gitlab.com/deenMuhammad" target="_blank" rel="noopener noreferrer"><img alt='gitlab' src={require('./../static/logos/gitlab.svg')} style={{width: '35px'}}/></a>
+            <a href="https://gitlab.com/deenMuhammad" target="_blank" rel="noopener noreferrer"><img alt='gitlab' src={require('./../static/logos/gitlab.svg')} style={{width: '35px', margin: 0}}/></a>
           </div>
           <p>2019</p>
       </FooterWrapper>
