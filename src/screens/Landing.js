@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components'
 
 //importing components
-import Header from './components/header'
-import Main from './components/main'
-import Footer from './components/footer'
-import Menu from './components/menu'
+import Header from '../components/header'
+import Main from '../components/main'
+import Footer from '../components/footer'
+import Menu from '../components/menu'
 
 const LandingWrapper = styled.div`
   font-family: 'Dosis', sans-serif;

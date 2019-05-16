@@ -28,7 +28,7 @@ const MenuWrapper = styled.div`
         justify-content: center;
         transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         :active{
-            transform: rotate(180deg);
+            transform: rotate(90deg);
         }
         img{
             cursor: pointer;
