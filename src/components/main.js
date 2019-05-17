@@ -19,7 +19,7 @@ const MainWrapper = styled.div`
             position:  relative;
             cursor: pointer;
             .featuring{
-                margin: 20px;
+                margin: 40px 20px;
                 font-size: 30px;
                 color: rgb(80,80,80);
                 display: flex;
@@ -41,12 +41,20 @@ const MainWrapper = styled.div`
                 max-width: 1000px;
                 margin: 20px;
                 font-size: 20px;
+                max-height: 80px;
+                overflow: hidden;
             }
             .date{
                 position: absolute; 
                 top: 10px;
                 right: 10px;
                 color: rgb(200,200,200);
+            }
+            .like{
+                position: absolute; 
+                top: 10px;
+                left: 10px;
+                color: rgb(100,100,100);
             }
         }
     }

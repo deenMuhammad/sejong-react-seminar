@@ -1,6 +1,25 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import {Query, Mutation} from 'react-apollo'
+import gql from "graphql-tag";
 
+const GET_SINGLE_POST = gql`
+query getSinglePost($_id: String!){
+  getSinglePost(_id: $_id){
+    _id
+    title
+    image
+    text
+    likes
+    date_added
+  }
+}
+`
+const LIKE_POST = gql`
+mutation likePost($_id: String){
+  likePost(_id: $_id)
+}
+`
 
 const FullPostWrapper = styled.div`
     width: 100%;
@@ -13,8 +32,9 @@ const FullPostWrapper = styled.div`
             margin: 20px 10px;
     }
     .title{
+        max-width: 700px;
         font-size: 40px;
-        margin: 30px 0;
+        margin: 30px 10px;
     }
     .featuring_image{
         margin: 10px;
@@ -41,25 +61,64 @@ const FullPostWrapper = styled.div`
             color: rgb(48, 230, 70);
         }
     }
+    .modal{
+        display: ${props=>props.modal_open?'flex':'none'};
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255, 0.9);
+        top: 0;
+        color: rgb(48, 230, 70);
+        font-size: 30px;
+        margin: 20px;
+    }
 `
 
 export default class Fullpost extends Component {
+    constructor(){
+        super();
+        this.state={
+            liked: false,
+            modal_open: false
+        }
+    }
   render() {
     return (
-      <FullPostWrapper>
-        <div className='title'>Name of the blog</div>
-        <img alt='featuring_image' className='featuring_image' src={"http://kosmonita.com/wp-content/uploads/2018/05/placeholder4.png"}/>
-        <blockquote className='text'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </blockquote>
-        <div className='like'>
-            <img alt='like' src={require('./../static/thumbsup.svg')}/>
-            Like this post
-        </div>
-      </FullPostWrapper>
+      <Query query={GET_SINGLE_POST} variables={{_id: this.props._id}}>
+      {({error, loading, data})=>{
+          if(error) return<p>error</p>
+          if(loading) return <p>loading...</p>
+          return(
+            <FullPostWrapper modal_open={this.state.modal_open}>
+            <div className='title'>{data.getSinglePost.title}</div>
+            <img alt='featuring_image' className='featuring_image' src={data.getSinglePost.image}/>
+            <blockquote className='text'>{data.getSinglePost.text}</blockquote>
+            <Mutation mutation={LIKE_POST}
+                onCompleted={()=>{
+                    this.setState({modal_open: true, liked: true});
+                    setTimeout(()=>{
+                        this.setState({modal_open: false});
+                    },2000)
+                }}
+            >
+                {(likePost)=>{
+                    return(
+                        <div className='like' onClick={()=>{
+                            likePost({variables: {_id: data.getSinglePost._id}})
+                        }}>
+                            <img alt='like' src={require('./../static/thumbsup.svg')}/>
+                            {this.state.liked?'Like it again 😎': 'Like this post'}
+                        </div>
+                    )
+                }}
+            </Mutation>
+            <div className='modal'>Thank you for liking the post 🎈🎊🎉</div>
+          </FullPostWrapper>
+          )
+      }}
+      </Query>
     )
   }
 }

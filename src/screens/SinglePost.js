@@ -22,7 +22,7 @@ export default class SinglePost extends Component {
     return (
       <SinglePostWrapper>
         <Header/>
-        <Fullpost/>
+        <Fullpost _id = {this.props.match.params.id}/>
         <Menu/>
         <Footer/>
       </SinglePostWrapper>
