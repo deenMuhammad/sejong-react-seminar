@@ -14,6 +14,7 @@ const MainWrapper = styled.div`
         justify-content: center;
         flex-direction: column;
         .item{
+            text-decoration: none;
             border-bottom: 0.5px solid rgb(230,230,230);
             position:  relative;
             cursor: pointer;

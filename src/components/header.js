@@ -20,6 +20,7 @@ const HeaderWrapper = styled.div`
         border-radius: 50%;
     }
     .text{
+        text-decoration: none;
         margin: 10px;
         font-size: 30px;
         text-align: center;

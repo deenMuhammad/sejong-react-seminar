@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 //importing components
 import Header from '../components/header'
@@ -24,38 +25,38 @@ function App() {
       <Header />
       <Menu />
       <Main>
-        <div className='item'>
+        <Link to='/singlepost/123' className='item'>
           <div className='featuring'>
-            <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStI_FZ6mqmCwFccZlx10KPaFCBmz9EWBCrA7LnpTbKCnyjTPYpWw"} alt='featuring_img'/>
+            <img src={"http://kosmonita.com/wp-content/uploads/2018/05/placeholder4.png"} alt='featuring_img'/>
             Name of the blog
           </div>
           <div className='short_desc'>short description of the blog. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
           <div className='date'>2019-05-15</div>
-        </div>
-        <div className='item'>
+        </Link>
+        <Link to='/singlepost/123' className='item'>
           <div className='featuring'>
-            <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStI_FZ6mqmCwFccZlx10KPaFCBmz9EWBCrA7LnpTbKCnyjTPYpWw"} alt='featuring_img'/>
+            <img src={"http://kosmonita.com/wp-content/uploads/2018/05/placeholder4.png"} alt='featuring_img'/>
             Name of the blog
           </div>
           <div className='short_desc'>short description of the blog. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
           <div className='date'>2019-05-15</div>
-        </div>
-        <div className='item'>
+        </Link>
+        <Link to='/singlepost/123' className='item'>
           <div className='featuring'>
-            <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStI_FZ6mqmCwFccZlx10KPaFCBmz9EWBCrA7LnpTbKCnyjTPYpWw"} alt='featuring_img'/>
+            <img src={"http://kosmonita.com/wp-content/uploads/2018/05/placeholder4.png"} alt='featuring_img'/>
             Name of the blog
           </div>
           <div className='short_desc'>short description of the blog. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
           <div className='date'>2019-05-15</div>
-        </div>
-        <div className='item'>
+        </Link>
+        <Link to='/singlepost/123' className='item'>
           <div className='featuring'>
-            <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStI_FZ6mqmCwFccZlx10KPaFCBmz9EWBCrA7LnpTbKCnyjTPYpWw"} alt='featuring_img'/>
+            <img src={"http://kosmonita.com/wp-content/uploads/2018/05/placeholder4.png"} alt='featuring_img'/>
             Name of the blog
           </div>
           <div className='short_desc'>short description of the blog. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
           <div className='date'>2019-05-15</div>
-        </div>
+        </Link>
       </Main>
       <Footer />
     </LandingWrapper>

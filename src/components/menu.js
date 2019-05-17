@@ -14,7 +14,6 @@ const MenuWrapper = styled.div`
     width: 40px;
     border-radius: 20px;
     background-color: white;
-    border: 1px solid rgb(230,230,230);
     -webkit-box-shadow: 2px 3px 22px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 3px 22px -3px rgba(0,0,0,0.75);
     box-shadow: 2px 3px 22px -3px rgba(0,0,0,0.75);

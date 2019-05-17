@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Landing from './screens/Landing';
 import Post from './screens/Post'
+import SinglePost from './screens/SinglePost'
 
 ReactDOM.render(
     <Router>
         <Route exact path='/' component={Landing}/>
         <Route exact path='/post' component={Post}/>
+        <Route exact path='/singlepost/:id' component={SinglePost}/>
     </Router>
     , document.getElementById('root'));
 
