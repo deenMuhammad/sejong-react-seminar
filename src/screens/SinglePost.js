@@ -15,6 +15,7 @@ const SinglePostWrapper = styled.div`
     flex-direction: column;
     color: rgb(100,100,100);
     position: relative;
+    background-color: white;
 `
 
 export default class SinglePost extends Component {
