@@ -10,7 +10,7 @@ import Post from './screens/Post'
 import SinglePost from './screens/SinglePost'
 
 const client = new ApolloClient({
-    uri: "http://localhost:4001/graphql"
+    uri: "https://sejong-seminar-server.herokuapp.com/graphql"
   });
 
 
