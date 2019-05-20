@@ -1,28 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "react-apollo";
 
-import Landing from './screens/Landing';
-import Post from './screens/Post'
-import SinglePost from './screens/SinglePost'
-
-const client = new ApolloClient({
-    uri: "https://sejong-seminar-server.herokuapp.com/graphql"
-  });
-
-
-ReactDOM.render(
-    <ApolloProvider client={client}>
-        <Router>
-            <Route exact path='/' component={Landing}/>
-            <Route exact path='/post' component={Post}/>
-            <Route exact path='/singlepost/:id' component={SinglePost}/>
-        </Router>
-    </ApolloProvider>
-    , document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
